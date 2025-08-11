@@ -3,11 +3,11 @@
 <head>
 
 <title>THE SLAB</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 <link rel="stylesheet" href="styles/style.css">
 
 <style>
+
 @font-face {
   font-family: DIN;
   src: url(fonts/DINAlternate-Bold.ttf);
@@ -20,119 +20,274 @@
 
 body {
   font-family: DIN;
-  margin: 0;
-  padding: 0;
-  background-color: #fff8e1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Global link colors */
-a:link, a:visited, a:hover, a:active {
-  color: #1f2d50;
+#shreefont {
+  font-family: shree;
+}
+
+#dinfont {
+  font-family: DIN;
+}
+
+a:link {
+  color: #36456c;
   background-color: transparent;
   text-decoration: none;
 }
-
-a:hover, a:active {
+a:visited {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #36456c;
+  background-color: transparent;
   text-decoration: underline;
 }
+a:active {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/* ----------- iPhone 4 and 4S ----------- */
 
-/* Border styling */
-.left-border,
-.right-border {
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 4vw; /* scalable */
-  min-width: 15px;
-  max-width: 30px;
-  background-repeat: repeat-y;
-  background-size: contain;
-  z-index: 1000;
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
 }
 
-.left-border {
-  left: 0;
-  background-image: url('images/Border Pattern L.png');
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
 }
 
-.right-border {
-  right: 0;
-  background-image: url('images/Border Pattern R.png');
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
 }
 
-.content {
-  margin: 0 4vw;
-  padding: 5vw 2vw;
-  max-width: 1000px;
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
 }
 
-/* Book animation */
-.book {
-  width: 80vw;
-  max-width: 350px;
-  aspect-ratio: 2 / 3;
-  perspective: 2000px;
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
 }
 
-.cover {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transform-origin: left center;
-  transition: transform 1.2s ease;
-  cursor: pointer;
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
 }
 
-.book:hover .cover {
-  transform: rotateY(-140deg);
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
 }
 
-/* Mobile tap flip */
-.book.flipped .cover {
-  transform: rotateY(-140deg);
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
 }
 
-.front,
-.inner-page {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  border: 2px solid #333;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
 }
 
-.front {
-  background-image: url('images/THE SLAB-1.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 2;
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
 }
 
-.inner-page {
-  background-color: #FEFEFB;
-  transform: rotateY(180deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #333;
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
 }
 
-/* Vertical menu (desktop) */
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+
+    body {
+      margin: 0;
+      padding: 0;
+	  background-color: #fff8e1;
+    }
+
+    .left-border,
+    .right-border {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 30px; /* adjust to match actual image width */
+      background-repeat: repeat-y;
+      background-size: contain;
+      z-index: 1000;
+    }
+
+    .left-border {
+      left: 0;
+      background-image: url('images/Border Pattern L.png');
+      background-position: left top;
+    }
+
+    .right-border {
+      right: 0;
+      background-image: url('images/Border Pattern R.png');
+      background-position: right top;
+    }
+
+    .content {
+      margin: 0 30px; /* space for both borders */
+      padding: 20px;
+    }
+
+/* BOOK ANIM */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .book {
+      width: 350px;
+      height: 525px;
+      perspective: 2000px;
+    }
+
+    .cover {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transform-origin: left center;
+      transition: transform 1.2s ease;
+      cursor: pointer;
+    }
+
+    .book:hover .cover {
+      transform: rotateY(-140deg);
+    }
+
+    .front,
+    .inner-page {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      border: 2px solid #333;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .front {
+      background-image: url('images/THE SLAB-1.png');
+      background-size: cover;
+      background-position: center;
+      z-index: 2;
+    }
+
+    .inner-page {
+      background-color: #FEFEFB;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      color: #333;
+    }
+	
+/* MENUBAR */
 .final-vertical-menu {
   position: fixed;
   top: 50%;
-  left: calc(4vw + 10px);
+  left: 40px; /* 30px border + 10px space */
   transform: rotate(-90deg) translateX(-50%);
   transform-origin: top left;
   display: flex;
   flex-direction: row;
-  gap: 34px;
+  gap: 34px; /* spacing between links */
   z-index: 1100;
 }
 
@@ -153,54 +308,16 @@ a:hover, a:active {
   color: #fff8e1;
   padding: 4px 8px;
 }
-
-/* Logo scaling */
-img[alt="slab logo"] {
-  width: 400px;
-  height: auto;
-  max-width: 100%;
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  .final-vertical-menu {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .final-vertical-menu a {
-    font-size: 16px;
-  }
-
-  .left-border, .right-border {
-    display: none;
-  }
-
-  body {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .content {
-    margin: 0;
-    padding: 20px;
-  }
-}
+	
 </style>
 
 </head>
 
-<body>
+<body style="background-color:rgb(0, 0, 0;">
 
-<!-- Borders -->
+<!–– BORDER IMAGE ––>
 <div class="left-border"></div>
-<div class="right-border"></div>
-
-<!-- Rotated menu -->
+<!-- Final Rotated Vertical Menu -->
 <div class="final-vertical-menu">
   <a href="pages/archive.html">ARCHIVE</a>
   <a href="pages/about.html">ABOUT</a>
@@ -210,55 +327,55 @@ img[alt="slab logo"] {
   <a href="index.html">HOME</a>
 </div>
 
-<!-- Main content -->
+
+<div class="right-border"></div>
 <div class="content">
-  <center><img src="images/Slab Copy.png" alt="slab logo"></center>
-  <br><br>
-  <center><div style="font-size: 20pt;">LATEST ISSUE:</div></center>
-  <br><br>
-  <center>
-    <a href="pages/slab calendar.html" class="book-link">
-      <div class="book">
-        <div class="cover">
-          <div class="front"></div>
-          <div class="inner-page">Click to view</div>
-        </div>
-      </div>
-    </a>
+
+
+
+
+<!–– TITLE ––>
+<center><img src="images/Slab Copy.png" alt="slab logo" style="width:400px;height:auto;"></center>
+
+
+<br><br>
+
+<!–– BOOK ANIM ––>
+
+<center><div style="font-size: 20pt;">LATEST ISSUE:</div></center>
+<br><br>
+<center>
+<a href="pages/slab calendar.html">
+  <div class="book">
+    <div class="cover">
+      <div class="front"></div>
+      <div class="inner-page">Click to view</div>
+    </div>
+  </div>
+  </a>
   </center>
 
-  <br><br>
-  <center><a href="../index.html">HOME</a> | <a href="../pages/venues.html">VENUES</a></center>
-  <br>
-</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+<!–– MENUBAR ––>
+<center><a href="../index.html">HOME</a> | <a href="../pages/venues.html">VENUES</a></center>
+<br>
+
+
+
+</div>
 <script>
-  // Highlight active menu link
+  // Get current path
   const currentPath = window.location.pathname.split("/").pop();
+
+  // Get all menu links
   document.querySelectorAll(".final-vertical-menu a").forEach(link => {
     const linkPath = link.getAttribute("href").split("/").pop();
     if (linkPath === currentPath) {
       link.classList.add("active");
     }
   });
-
-  // Mobile flip-on-tap
-  const bookLink = document.querySelector('.book-link');
-  const book = document.querySelector('.book');
-  let flippedOnce = false;
-
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    bookLink.addEventListener('click', function(e) {
-      if (!flippedOnce) {
-        e.preventDefault(); // stop immediate navigation
-        book.classList.toggle('flipped');
-        flippedOnce = true;
-        // reset after 3s if no second tap
-        setTimeout(() => flippedOnce = false, 3000);
-      }
-    });
-  }
 </script>
-
 </body>
+
 </html>
