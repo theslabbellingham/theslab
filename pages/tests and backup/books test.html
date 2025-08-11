@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Book Grid</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      margin: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .book {
+      text-align: center;
+      perspective: 800px;
+    }
+
+    .cover {
+      width: 120px;
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      margin: auto auto 8px auto;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+    }
+
+    /* Books WITH image */
+    .has-image {
+      border: 2px solid black;
+    }
+
+    .has-image:hover {
+      transform: rotateY(-15deg) scale(1.03);
+    }
+
+    /* Books WITHOUT image */
+    .no-image {
+      background-color: transparent;
+      border: 2px dotted black;
+    }
+
+    .label {
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Book Grid</h1>
+  <div class="grid">
+    <!-- Book 1 with image -->
+    <div class="book" id="book-1">
+      <div class="cover" style="background-image: url('THE SLAB-1.png');"></div>
+      <div class="label">July 2025</div>
+    </div>
+
+    <!-- Books 2–16 (empty) -->
+    <div class="book" id="book-2">
+      <div class="cover" style="background-image: url('');"></div>
+      <div class="label">August 2025</div>
+    </div>
+    <div class="book" id="book-3">
+      <div class="cover" style="background-image: url('');"></div>
+      <div class="label">September 2025</div>
+    </div>
+    <!-- ...repeat up to book-16... -->
+    <div class="book" id="book-16">
+      <div class="cover" style="background-image: url('');"></div>
+      <div class="label">October 2026</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.cover').forEach(cover => {
+      const bg = cover.style.backgroundImage;
+      if (bg && bg !== 'url("")') {
+        cover.classList.add('has-image');
+      } else {
+        cover.classList.add('no-image');
+      }
+    });
+  </script>
+</body>
+</html>

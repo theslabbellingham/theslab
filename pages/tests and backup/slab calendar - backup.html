@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>THE SLAB</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+<link rel="stylesheet" href="../styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<style>
+
+@font-face {
+  font-family: DIN;
+  src: url(../fonts/DINAlternate-Bold.ttf);
+}
+
+@font-face {
+  font-family: shree;
+  src: url(../fonts/shree-devanagari-714.ttf);
+}
+
+body {
+  font-family: DIN;
+}
+
+#shreefont {
+  font-family: shree;
+}
+
+#dinfont {
+  font-family: DIN;
+}
+
+a:link {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+
+/* TABLE OF SHOWS */
+    body {
+      background-color: #fff8e1;
+      padding: 40px;
+      color: #36456c;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 4px 8px;
+      border-bottom: 1px solid #36456c;
+      vertical-align: top;
+      color: #36456c;
+    }
+
+    .date {
+      width: 15%;
+      font-weight: bold;
+      font-size: 20px;
+      color: #36456c;
+    }
+    .venue {
+      width: 20%;
+    }
+    .time {
+      width: 15%;
+    }
+    .performers {
+      width: 50%;
+    }
+	
+/* BORDER */
+	
+	body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .left-border,
+    .right-border {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 30px; /* adjust to match actual image width */
+      background-repeat: repeat-y;
+      background-size: contain;
+      z-index: 1000;
+    }
+
+    .left-border {
+      left: 0;
+      background-image: url('../images/Border Pattern L.png');
+      background-position: left top;
+    }
+
+    .right-border {
+      right: 0;
+      background-image: url('../images/Border Pattern R.png');
+      background-position: right top;
+    }
+
+	.content {
+	margin: 0 30px 0 80px; /* 80px on the left to avoid overlap */
+	padding: 20px;
+	}
+
+	
+/* MENUBAR */
+.final-vertical-menu {
+  position: fixed;
+  top: 50%;
+  left: 40px; /* 30px border + 10px space */
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: top left;
+  display: flex;
+  flex-direction: row;
+  gap: 34px; /* spacing between links */
+  z-index: 1100;
+}
+
+.final-vertical-menu a {
+  font-size: 20px;
+  font-family: DIN, sans-serif;
+  color: #1f2d50;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.final-vertical-menu a:hover {
+  text-decoration: underline;
+}
+
+.day-small {
+  font-size: 13px;
+  color: #36456c;
+  margin-top: 2px;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div class="left-border"></div>
+
+<!-- Final Rotated Vertical Menu -->
+<div class="final-vertical-menu">
+  <a href="../pages/archive.html">ARCHIVE</a>
+  <a href="../pages/about.html">ABOUT</a>
+  <a href="../pages/featured posters.html">FEATURED POSTERS</a>
+  <a href="../pages/venues.html">VENUES</a>
+  <a href="../pages/slab calendar.html">CAL</a>
+  <a href="../index.html">HOME</a>
+</div>
+
+<div class="right-border"></div>
+<div class="content">
+
+<!–– TITLE ––>
+<center><a href="../index.html"><img src="../images/Slab Copy.png" alt="slab logo" style="width:400px;height:auto;"></a></center>
+
+<!-- ARROWS -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+  <a href="../index.html" style="font-size: 48px; color: #36456c; text-decoration: none;">&#8592;</a>
+  <a href="../pages/venues.html" style="font-size: 48px; color: #36456c; text-decoration: none;">&#8594;</a>
+</div>
+
+<br><br>
+<!–– THE BIG SCRIPT ––>
+
+<!-- PULLS FROM concerts.csv AND PARSES COMMAS AS SEPARATORS, PUT ANY PERFORMERS' NAMES WITH COMMAS IN QUOTES TO AVOID MALFUNCTIONS -->
+
+<table id="concertTable"></table>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script>
+	const csvUrl = '../data/concerts.csv';
+
+  async function loadConcertData() {
+    const response = await fetch(csvUrl);
+    const csvText = await response.text();
+    const parsed = Papa.parse(csvText, { header: true });
+
+    const table = document.getElementById('concertTable');
+    const rows = parsed.data.filter(row => row.Date && row.Venue && row.Venue.trim() !== '');
+
+    let currentDate = '';
+    let group = [];
+
+    function renderGroup(day, date, groupRows) {
+      groupRows.forEach((row, i) => {
+        if (!row.Venue || row.Venue.trim() === '') return;
+
+        if (i === 0 && table.lastChild) {
+          const spacer = document.createElement('tr');
+          const spacerDate = document.createElement('td');
+          spacerDate.className = 'date';
+          spacerDate.style.border = 'none';
+
+          const spacerGap = document.createElement('td');
+          spacerGap.colSpan = 3;
+          spacerGap.style.paddingTop = '24px';
+          spacerGap.style.border = 'none';
+
+          spacer.appendChild(spacerDate);
+          spacer.appendChild(spacerGap);
+          table.appendChild(spacer);
+        }
+
+        const tr = document.createElement('tr');
+        if (i === 0) {
+          const td = document.createElement('td');
+          td.className = 'date';
+          td.style.borderBottom = 'none';
+          td.rowSpan = groupRows.length;
+
+          td.innerHTML = `
+            <div>${date}</div>
+            <div class="day-small">${day}</div>
+          `;
+
+          tr.appendChild(td);
+        }
+
+        const venueTd = document.createElement('td');
+        venueTd.className = 'venue';
+        venueTd.textContent = row.Venue;
+
+        const timeTd = document.createElement('td');
+        timeTd.className = 'time';
+        timeTd.textContent = row.Time;
+
+        const performersTd = document.createElement('td');
+        performersTd.className = 'performers';
+        performersTd.textContent = row.Performers;
+
+        tr.appendChild(venueTd);
+        tr.appendChild(timeTd);
+        tr.appendChild(performersTd);
+        table.appendChild(tr);
+      });
+    }
+
+    for (const row of rows) {
+      const date = row.Date;
+      const day = row.Day;
+      if (date !== currentDate) {
+        if (group.length > 0) {
+          renderGroup(group[0].Day, currentDate, group);
+          group = [];
+        }
+        currentDate = date;
+      }
+      group.push(row);
+    }
+    if (group.length > 0) {
+      renderGroup(group[0].Day, currentDate, group);
+    }
+  }
+
+  loadConcertData();
+  </script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<!–– MENUBAR ––>
+<br>
+<center><a href="../index.html">HOME</a> | <a href="../pages/venues.html">VENUES</a></center>
+
+
+</div>
+
+
+</body>
+</html>

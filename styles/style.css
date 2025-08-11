@@ -1,0 +1,9 @@
+body {
+	color: #36456c;
+	
+	@font-face {
+		font-family: "DIN"; 
+		src: url("/fonts/DINAlternate-Bold.ttf") format("truetype");
+	}
+}
+	

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>THE SLAB</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+<link rel="stylesheet" href="../styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<style>
+
+@font-face {
+  font-family: DIN;
+  src: url(../fonts/DINAlternate-Bold.ttf);
+}
+
+@font-face {
+  font-family: shree;
+  src: url(../fonts/shree-devanagari-714.ttf);
+}
+
+body {
+  font-family: DIN;
+}
+
+#shreefont {
+  font-family: shree;
+}
+
+#dinfont {
+  font-family: DIN;
+}
+
+a:link {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: #36456c;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+
+/* TABLE OF SHOWS */
+    body {
+      background-color: #fff8e1;
+      padding: 40px;
+      color: #36456c;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 4px 8px;
+      border-bottom: 1px solid #36456c;
+      vertical-align: top;
+      color: #36456c;
+    }
+
+    .date {
+      width: 15%;
+      font-weight: bold;
+      font-size: 20px;
+      color: #36456c;
+    }
+    .venue {
+      width: 20%;
+    }
+    .time {
+      width: 15%;
+    }
+    .performers {
+      width: 50%;
+    }
+	
+/* BORDER */
+	
+	body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .left-border,
+    .right-border {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 30px; /* adjust to match actual image width */
+      background-repeat: repeat-y;
+      background-size: contain;
+      z-index: 1000;
+    }
+
+    .left-border {
+      left: 0;
+      background-image: url('../images/Border Pattern L.png');
+      background-position: left top;
+    }
+
+    .right-border {
+      right: 0;
+      background-image: url('../images/Border Pattern R.png');
+      background-position: right top;
+    }
+
+
+	.content {
+	margin: 0 30px 0 80px; /* 80px on the left to avoid overlap */
+	padding: 20px;
+	}
+
+	
+/* BACKGROUND IMAGE */
+	
+	img.background {
+      position: absolute;
+      z-index: -1;
+    }
+
+/* MENUBAR */
+.final-vertical-menu {
+  position: fixed;
+  top: 50%;
+  left: 40px; /* 30px border + 10px space */
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: top left;
+  display: flex;
+  flex-direction: row;
+  gap: 34px; /* spacing between links */
+  z-index: 1100;
+}
+
+.final-vertical-menu a {
+  font-size: 20px;
+  font-family: DIN, sans-serif;
+  color: #1f2d50;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.final-vertical-menu a:hover {
+  text-decoration: underline;
+}
+
+.final-vertical-menu a.active {
+  background-color: #1f2d50;
+  color: white;
+  padding: 4px 8px;
+}
+
+	
+</style>
+
+</head>
+<body style="background-color:rgb(0, 0, 0;">
+
+<div class="left-border"></div>
+
+<!-- Final Rotated Vertical Menu -->
+<div class="final-vertical-menu">
+  <a href="../pages/archive.html">ARCHIVE</a>
+  <a href="../pages/about.html">ABOUT</a>
+  <a href="../pages/featured posters.html" class="active">FEATURED POSTERS</a>
+  <a href="../pages/venues.html">VENUES</a>
+  <a href="../pages/slab calendar.html">CAL</a>
+  <a href="../index.html">HOME</a>
+</div>
+
+
+<div class="right-border"></div>
+<div class="content">
+
+<!-- TITLE -->
+<center><a href="../index.html"><img src="../images/Slab Copy.png" alt="slab logo" style="width:400px;height:auto;"></a></center>
+
+<!-- ARROWS -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+  <a href="../pages/venues.html" style="font-size: 48px; color: #36456c; text-decoration: none;">&#8592;</a>
+  <a href="../pages/about.html" style="font-size: 48px; color: #36456c; text-decoration: none;">&#8594;</a>
+</div>
+
+<!-- HEADING -->
+<center><div id="shreefont" style="font-size: 80pt;font-style:italic;"><b>FEATURED POSTERS</b></div></center>
+
+<!-- POSTERS SIDE BY SIDE -->
+<div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px;">
+  <img src="../images/THE SLAB-4.png" alt="poster 1" style="width:600px; height:auto;">
+  <img src="../images/THE SLAB-5.png" alt="poster 2" style="width:600px; height:auto;">
+</div>
+
+<br><br>
+<br><br>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<!-- MENUBAR -->
+<br>
+<center><a href="../index.html">HOME</a> | <a href="../pages/venues.html">VENUES</a></center>
+
+
+</div>
+
+<script>
+  // Get current path relative to the domain (e.g., "pages/about.html")
+  const currentPath = window.location.pathname.replace(/^\/+/, "");
+
+  // Loop through each menu link
+  document.querySelectorAll(".final-vertical-menu a").forEach(link => {
+    const linkHref = link.getAttribute("href").replace(/^\/+/, "");
+    
+    if (linkHref === currentPath) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+</body>
+</html>
