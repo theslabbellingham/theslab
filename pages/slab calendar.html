@@ -59,7 +59,6 @@ a:active {
 
 /* TABLE OF SHOWS */
     body {
-      background-color: #fff8e1;
       padding: 40px;
       color: #36456c;
       text-transform: uppercase;
@@ -173,6 +172,12 @@ a:active {
   line-height: 1.1; /* adjust this as needed */
 }
 
+.no-shows {
+  font-size: 13px;
+  color: #36456c;
+  font-family: DIN, sans-serif;
+}
+
 
 
 </style>
@@ -221,9 +226,8 @@ a:active {
       const parsed = Papa.parse(csvText, { header: true });
 
       const table = document.getElementById('concertTable');
-		const rows = parsed.data.filter(row => 
-		  row.Date && row.Performers && row.Venue && row.Time
-		);
+		const rows = parsed.data.filter(row => row.Date);
+
 
 
       let currentDate = '';
@@ -235,7 +239,6 @@ a:active {
 		  groupRows.forEach((row, i) => {
 			const tr = document.createElement('tr');
 
-			// Add class to tweak spacing for single-row groups
 			if (isSingleRow) {
 			  tr.classList.add('single-line-row');
 			}
@@ -249,34 +252,48 @@ a:active {
 			  tr.appendChild(td);
 			}
 
-			const venueTd = document.createElement('td');
-			venueTd.className = 'venue';
-			venueTd.textContent = row.Venue;
+			// ✅ Show fallback only if ALL three are blank
+			if (
+			  !row.Venue?.trim() &&
+			  !row.Time?.trim() &&
+			  !row.Performers?.trim()
+			) {
+			  const messageTd = document.createElement('td');
+			  messageTd.colSpan = 3;
+			  messageTd.innerHTML =
+				'<span class="no-shows"><em>No shows today! Know of one? Submit it to us at theslabbellingham@gmail.com</em></span>';
+			  tr.appendChild(messageTd);
+			} else {
+			  const venueTd = document.createElement('td');
+			  venueTd.className = 'venue';
+			  venueTd.textContent = row.Venue;
 
-			const timeTd = document.createElement('td');
-			timeTd.className = 'time';
-			timeTd.textContent = row.Time;
+			  const timeTd = document.createElement('td');
+			  timeTd.className = 'time';
+			  timeTd.textContent = row.Time;
 
-			const performersTd = document.createElement('td');
-			performersTd.className = 'performers';
-			performersTd.textContent = row.Performers;
+			  const performersTd = document.createElement('td');
+			  performersTd.className = 'performers';
+			  performersTd.textContent = row.Performers;
 
-			tr.appendChild(venueTd);
-			tr.appendChild(timeTd);
-			tr.appendChild(performersTd);
+			  tr.appendChild(venueTd);
+			  tr.appendChild(timeTd);
+			  tr.appendChild(performersTd);
+			}
+
 			table.appendChild(tr);
 		  });
 
-		  // Trailing spacer row
+		  // Spacer row between date sections
 		  const spacer = document.createElement('tr');
 		  const emptyTd = document.createElement('td');
 		  emptyTd.colSpan = 4;
-		  // ADJUST VALUE BELOW TO MODIFY THE AMOUNT OF SPACE BETWEEN EACH DATE SECTION
 		  emptyTd.style.paddingBottom = '26px';
 		  emptyTd.style.border = 'none';
 		  spacer.appendChild(emptyTd);
 		  table.appendChild(spacer);
 		}
+
 
 
 

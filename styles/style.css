@@ -1,5 +1,9 @@
 body {
 	color: #36456c;
+    margin: 0;
+    padding: 0;
+	background-color: #faf4ea;
+
 	
 	@font-face {
 		font-family: "DIN"; 
