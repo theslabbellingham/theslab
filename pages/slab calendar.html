@@ -179,6 +179,11 @@ a:active {
   font-family: DIN, sans-serif;
 }
 
+#searchInput::placeholder {
+  color: #36456c; /* Change to any color you like */
+  opacity: 1;      /* Ensures the color shows up consistently */
+}
+
 
 
 </style>
@@ -213,109 +218,124 @@ a:active {
 <br><br>
 <!–– THE BIG SCRIPT ––>
 
+<!-- SEARCH BAR -->
+<div style="text-align: right; margin: 10px 0;">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Search shows..."
+    style="padding: 6px 10px; font-size: 14px; border: none; border-bottom: 1px solid #36456c; outline: none; background: transparent; color: #36456c;">
+</div>
+
+<br>
+
 <!-- PULLS FROM concerts.csv AND PARSES COMMAS AS SEPARATORS, PUT ANY PERFORMERS' NAMES WITH COMMAS IN QUOTES TO AVOID MALFUNCTIONS -->
 
 <table id="concertTable"></table>
 
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script>
-    const csvUrl = '../data/concerts.csv';
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script>
+  const csvUrl = '../data/concerts.csv';
+  let parsedRows = [];
 
-    async function loadConcertData() {
-      const response = await fetch(csvUrl);
-      const csvText = await response.text();
-      const parsed = Papa.parse(csvText, { header: true });
+  async function loadConcertData() {
+    const response = await fetch(csvUrl);
+    const csvText = await response.text();
+    const parsed = Papa.parse(csvText, { header: true });
+    parsedRows = parsed.data.filter(row => row.Date);
 
-      const table = document.getElementById('concertTable');
-		const rows = parsed.data.filter(row => row.Date);
+    renderTable(parsedRows);
+  }
 
+  function renderTable(rows) {
+    const table = document.getElementById('concertTable');
+    table.innerHTML = ''; // clear table
 
+    let currentDate = '';
+    let group = [];
 
-      let currentDate = '';
-      let group = [];
+    function renderGroup(date, groupRows) {
+      const isSingleRow = groupRows.length === 1;
 
-		function renderGroup(date, groupRows) {
-		  const isSingleRow = groupRows.length === 1;
+      groupRows.forEach((row, i) => {
+        const tr = document.createElement('tr');
+        if (isSingleRow) tr.classList.add('single-line-row');
 
-		  groupRows.forEach((row, i) => {
-			const tr = document.createElement('tr');
-
-			if (isSingleRow) {
-			  tr.classList.add('single-line-row');
-			}
-
-			if (i === 0) {
-			  const td = document.createElement('td');
-			  td.className = 'date';
-			  td.style.borderBottom = 'none';
-			  td.rowSpan = groupRows.length;
-			  td.textContent = date;
-			  tr.appendChild(td);
-			}
-
-			// ✅ Show fallback only if ALL three are blank
-			if (
-			  !row.Venue?.trim() &&
-			  !row.Time?.trim() &&
-			  !row.Performers?.trim()
-			) {
-			  const messageTd = document.createElement('td');
-			  messageTd.colSpan = 3;
-			  messageTd.innerHTML =
-				'<span class="no-shows"><em>No shows today! Know of one? Fill out this submission <b><a href="https://form.jotform.com/252257562730053" target="blank">form.</a></b></em></span>';
-			  tr.appendChild(messageTd);
-			} else {
-			  const venueTd = document.createElement('td');
-			  venueTd.className = 'venue';
-			  venueTd.textContent = row.Venue;
-
-			  const timeTd = document.createElement('td');
-			  timeTd.className = 'time';
-			  timeTd.textContent = row.Time;
-
-			  const performersTd = document.createElement('td');
-			  performersTd.className = 'performers';
-			  performersTd.textContent = row.Performers;
-
-			  tr.appendChild(venueTd);
-			  tr.appendChild(timeTd);
-			  tr.appendChild(performersTd);
-			}
-
-			table.appendChild(tr);
-		  });
-
-		  // Spacer row between date sections
-		  const spacer = document.createElement('tr');
-		  const emptyTd = document.createElement('td');
-		  emptyTd.colSpan = 4;
-		  emptyTd.style.paddingBottom = '26px';
-		  emptyTd.style.border = 'none';
-		  spacer.appendChild(emptyTd);
-		  table.appendChild(spacer);
-		}
-
-
-
-
-      for (const row of rows) {
-        const date = row.Date;
-        if (date !== currentDate) {
-          if (group.length > 0) {
-            renderGroup(currentDate, group);
-            group = [];
-          }
-          currentDate = date;
+        if (i === 0) {
+          const td = document.createElement('td');
+          td.className = 'date';
+          td.style.borderBottom = 'none';
+          td.rowSpan = groupRows.length;
+          td.textContent = date;
+          tr.appendChild(td);
         }
-        group.push(row);
-      }
-      if (group.length > 0) {
-        renderGroup(currentDate, group);
-      }
+
+        if (!row.Venue?.trim() && !row.Time?.trim() && !row.Performers?.trim()) {
+          const messageTd = document.createElement('td');
+          messageTd.colSpan = 3;
+          messageTd.innerHTML =
+            '<span class="no-shows"><em>No shows today! Know of one? Fill out this submission <b><a href="https://form.jotform.com/252257562730053" target="blank">form.</a></b></em></span>';
+          tr.appendChild(messageTd);
+        } else {
+          const venueTd = document.createElement('td');
+          venueTd.className = 'venue';
+          venueTd.textContent = row.Venue;
+
+          const timeTd = document.createElement('td');
+          timeTd.className = 'time';
+          timeTd.textContent = row.Time;
+
+          const performersTd = document.createElement('td');
+          performersTd.className = 'performers';
+          performersTd.textContent = row.Performers;
+
+          tr.appendChild(venueTd);
+          tr.appendChild(timeTd);
+          tr.appendChild(performersTd);
+        }
+
+        table.appendChild(tr);
+      });
+
+      // Spacer row
+      const spacer = document.createElement('tr');
+      const emptyTd = document.createElement('td');
+      emptyTd.colSpan = 4;
+      emptyTd.style.paddingBottom = '26px';
+      emptyTd.style.border = 'none';
+      spacer.appendChild(emptyTd);
+      table.appendChild(spacer);
     }
 
-    loadConcertData();
-  </script>
+    for (const row of rows) {
+      const date = row.Date;
+      if (date !== currentDate) {
+        if (group.length > 0) {
+          renderGroup(currentDate, group);
+          group = [];
+        }
+        currentDate = date;
+      }
+      group.push(row);
+    }
+    if (group.length > 0) renderGroup(currentDate, group);
+  }
+
+  // 🔍 Search function
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const searchText = this.value.toLowerCase();
+    const filtered = parsedRows.filter(row =>
+      row.Date?.toLowerCase().includes(searchText) ||
+      row.Venue?.toLowerCase().includes(searchText) ||
+      row.Time?.toLowerCase().includes(searchText) ||
+      row.Performers?.toLowerCase().includes(searchText)
+    );
+    renderTable(filtered);
+  });
+
+  loadConcertData();
+</script>
+
   
   <br><br><br><br><br><br>
  <center>
@@ -323,13 +343,14 @@ a:active {
   <p><i>Did we miss anything? Reach out to us at <a href="mailto:theslabbellingham@gmail.com target="blank">theslabbellingham@gmail.com</a> or submit a concert by filling out this <b><u><a href="https://form.jotform.com/252257562730053" target="blank">form.</a></u></b></i></p>
   </div>
 </center>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 <!–– MENUBAR ––>
 <br>
-<center><a href="../index.html">HOME</a> | <a href="../pages/venues.html">VENUES</a></center>
-
+<div style="text-align: center; margin-bottom: 1px;">
+    <a href="https://form.jotform.com/252257562730053">SUBMIT SHOW</a> &nbsp | &nbsp <a href="https://form.jotform.com/252257775110051">SUBMIT POSTER</a>
+</div>
 
 </div>
 
