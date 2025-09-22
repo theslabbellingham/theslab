@@ -180,6 +180,13 @@ a:active {
   color: #fff8e1;
   padding: 4px 8px;
 }
+
+.book-link {
+  display: inline-block; /* ensures clickable area matches book */
+  width: 425px;          /* same as your .book width */
+  height: 550px;         /* same as your .book height */
+  text-decoration: none;
+}
 	
 </style>
 
@@ -217,17 +224,15 @@ a:active {
 <center><div style="font-size: 20pt;">LATEST ISSUE:</div></center>
 <br><br>
 <center>
-	<a href="pages/slab calendar.html">
-  <div class="book">
-    <div class="cover">
-
-      <div class="front"></div>
-
-      <div class="inner-page">Click to view</div>
+  <a href="pages/slab calendar.html" class="book-link">
+    <div class="book">
+      <div class="cover">
+        <div class="front"></div>
+        <div class="inner-page">Click to view</div>
+      </div>
     </div>
-  </div>
-	   </a>
-  </center>
+  </a>
+</center>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
