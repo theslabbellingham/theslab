@@ -2,12 +2,14 @@
 <html>
 <head>
 
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+
 <title>THE SLAB</title>
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?">
 <link rel="stylesheet" href="../styles/style.css">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
 <style>
@@ -54,147 +56,9 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
-/* ----------- iPhone 4 and 4S ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-
-}
-
-/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-
-}
-
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-
-}
-
-/* ----------- iPhone 6+, 7+ and 8+ ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
-}
-
-/* ----------- iPhone X ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
-}
 
 /* TABLE OF SHOWS */
     body {
-      background-color: #fff8e1;
       padding: 40px;
       color: #36456c;
       text-transform: uppercase;
@@ -207,7 +71,8 @@ a:active {
 
     td {
       padding: 4px 8px;
-      border-bottom: 1px solid #36456c;
+		border-bottom: 1px solid #36456c;  /* fallback for older/low-DPI browsers */
+		border-bottom: 0.5px solid #36456c; /* overrides on modern/high-DPI browsers */
       vertical-align: top;
       color: #36456c;
     }
@@ -296,6 +161,24 @@ a:active {
   margin-top: 2px;
 }
 
+.final-vertical-menu a.active {
+  background-color: #1f2d50;
+  color: #fff8e1;
+  padding: 4px 8px;
+}
+
+.single-line-row td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 1.1; /* adjust this as needed */
+}
+
+.no-shows {
+  font-size: 13px;
+  color: #36456c;
+  font-family: DIN, sans-serif;
+}
+
 
 
 </style>
@@ -309,9 +192,9 @@ a:active {
 <div class="final-vertical-menu">
   <a href="../pages/archive.html">ARCHIVE</a>
   <a href="../pages/about.html">ABOUT</a>
-  <a href="../pages/featured posters.html">FEATURED POSTERS</a>
   <a href="../pages/venues.html">VENUES</a>
-  <a href="../pages/slab calendar.html">CAL</a>
+  <a href="../pages/featured posters.html">FEATURED POSTERS</a>
+  <a href="../pages/slab calendar.html" class="active">CAL</a>
   <a href="../index.html">HOME</a>
 </div>
 
@@ -324,7 +207,7 @@ a:active {
 <!-- ARROWS -->
 <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
   <a href="../index.html" style="font-size: 48px; color: #36456c; text-decoration: none;">&#8592;</a>
-  <a href="../pages/venues.html" style="font-size: 48px; color: #36456c; text-decoration: none;">&#8594;</a>
+  <a href="../pages/featured posters.html" style="font-size: 48px; color: #36456c; text-decoration: none;">&#8594;</a>
 </div>
 
 <br><br>
@@ -336,97 +219,110 @@ a:active {
 
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script>
-	const csvUrl = '../data/concerts.csv';
+    const csvUrl = '../data/concerts.csv';
 
-  async function loadConcertData() {
-    const response = await fetch(csvUrl);
-    const csvText = await response.text();
-    const parsed = Papa.parse(csvText, { header: true });
+    async function loadConcertData() {
+      const response = await fetch(csvUrl);
+      const csvText = await response.text();
+      const parsed = Papa.parse(csvText, { header: true });
 
-    const table = document.getElementById('concertTable');
-    const rows = parsed.data.filter(row => row.Date && row.Venue && row.Venue.trim() !== '');
+      const table = document.getElementById('concertTable');
+		const rows = parsed.data.filter(row => row.Date);
 
-    let currentDate = '';
-    let group = [];
 
-    function renderGroup(day, date, groupRows) {
-      groupRows.forEach((row, i) => {
-        if (!row.Venue || row.Venue.trim() === '') return;
 
-        if (i === 0 && table.lastChild) {
-          const spacer = document.createElement('tr');
-          const spacerDate = document.createElement('td');
-          spacerDate.className = 'date';
-          spacerDate.style.border = 'none';
+      let currentDate = '';
+      let group = [];
 
-          const spacerGap = document.createElement('td');
-          spacerGap.colSpan = 3;
-          spacerGap.style.paddingTop = '24px';
-          spacerGap.style.border = 'none';
+		function renderGroup(date, groupRows) {
+		  const isSingleRow = groupRows.length === 1;
 
-          spacer.appendChild(spacerDate);
-          spacer.appendChild(spacerGap);
-          table.appendChild(spacer);
+		  groupRows.forEach((row, i) => {
+			const tr = document.createElement('tr');
+
+			if (isSingleRow) {
+			  tr.classList.add('single-line-row');
+			}
+
+			if (i === 0) {
+			  const td = document.createElement('td');
+			  td.className = 'date';
+			  td.style.borderBottom = 'none';
+			  td.rowSpan = groupRows.length;
+			  td.textContent = date;
+			  tr.appendChild(td);
+			}
+
+			// ✅ Show fallback only if ALL three are blank
+			if (
+			  !row.Venue?.trim() &&
+			  !row.Time?.trim() &&
+			  !row.Performers?.trim()
+			) {
+			  const messageTd = document.createElement('td');
+			  messageTd.colSpan = 3;
+			  messageTd.innerHTML =
+				'<span class="no-shows"><em>No shows today! Know of one? Fill out this submission <b><a href="https://form.jotform.com/252257562730053" target="blank">form.</a></b></em></span>';
+			  tr.appendChild(messageTd);
+			} else {
+			  const venueTd = document.createElement('td');
+			  venueTd.className = 'venue';
+			  venueTd.textContent = row.Venue;
+
+			  const timeTd = document.createElement('td');
+			  timeTd.className = 'time';
+			  timeTd.textContent = row.Time;
+
+			  const performersTd = document.createElement('td');
+			  performersTd.className = 'performers';
+			  performersTd.textContent = row.Performers;
+
+			  tr.appendChild(venueTd);
+			  tr.appendChild(timeTd);
+			  tr.appendChild(performersTd);
+			}
+
+			table.appendChild(tr);
+		  });
+
+		  // Spacer row between date sections
+		  const spacer = document.createElement('tr');
+		  const emptyTd = document.createElement('td');
+		  emptyTd.colSpan = 4;
+		  emptyTd.style.paddingBottom = '26px';
+		  emptyTd.style.border = 'none';
+		  spacer.appendChild(emptyTd);
+		  table.appendChild(spacer);
+		}
+
+
+
+
+      for (const row of rows) {
+        const date = row.Date;
+        if (date !== currentDate) {
+          if (group.length > 0) {
+            renderGroup(currentDate, group);
+            group = [];
+          }
+          currentDate = date;
         }
-
-        const tr = document.createElement('tr');
-        if (i === 0) {
-          const td = document.createElement('td');
-          td.className = 'date';
-          td.style.borderBottom = 'none';
-          td.rowSpan = groupRows.length;
-
-          td.innerHTML = `
-            <div>${date}</div>
-            <div class="day-small">${day}</div>
-          `;
-
-          tr.appendChild(td);
-        }
-
-        const venueTd = document.createElement('td');
-        venueTd.className = 'venue';
-        venueTd.textContent = row.Venue;
-
-        const timeTd = document.createElement('td');
-        timeTd.className = 'time';
-        timeTd.textContent = row.Time;
-
-        const performersTd = document.createElement('td');
-        performersTd.className = 'performers';
-        performersTd.textContent = row.Performers;
-
-        tr.appendChild(venueTd);
-        tr.appendChild(timeTd);
-        tr.appendChild(performersTd);
-        table.appendChild(tr);
-      });
-    }
-
-    for (const row of rows) {
-      const date = row.Date;
-      const day = row.Day;
-      if (date !== currentDate) {
-        if (group.length > 0) {
-          renderGroup(group[0].Day, currentDate, group);
-          group = [];
-        }
-        currentDate = date;
+        group.push(row);
       }
-      group.push(row);
+      if (group.length > 0) {
+        renderGroup(currentDate, group);
+      }
     }
-    if (group.length > 0) {
-      renderGroup(group[0].Day, currentDate, group);
-    }
-  }
 
-  loadConcertData();
+    loadConcertData();
   </script>
-
+  
+  <br><br><br><br><br><br>
+ <center>
+ <div id="shreefont">
+  <p><i>Did we miss anything? Reach out to us at <a href="mailto:theslabbellingham@gmail.com target="blank">theslabbellingham@gmail.com</a> or submit a concert by filling out this <b><u><a href="https://form.jotform.com/252257562730053" target="blank">form.</a></u></b></i></p>
+  </div>
+</center>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
@@ -436,6 +332,20 @@ a:active {
 
 
 </div>
+
+<script>
+  // Get current path relative to the domain (e.g., "pages/about.html")
+  const currentPath = window.location.pathname.replace(/^\/+/, "");
+
+  // Loop through each menu link
+  document.querySelectorAll(".final-vertical-menu a").forEach(link => {
+    const linkHref = link.getAttribute("href").replace(/^\/+/, "");
+    
+    if (linkHref === currentPath) {
+      link.classList.add("active");
+    }
+  });
+</script>
 
 
 </body>
